@@ -63,11 +63,7 @@ export const SOCIAL_LINKS = [
   { label: 'Email', href: 'mailto:zeeshan89819@gmail.com', icon: Mail },
 ];
 
-export const SPOTIFY_CONFIG = {
-  CLIENT_ID: process.env.REACT_APP_SPOTIFY_CLIENT_ID || '',
-  CLIENT_SECRET: process.env.REACT_APP_SPOTIFY_CLIENT_SECRET || '',
-  REFRESH_TOKEN: process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN || '',
-};
+
 
 export const TECH_ICONS: Record<string, any> = {
   'React': Code2,

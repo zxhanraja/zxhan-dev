@@ -13,8 +13,8 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialIsDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+    // Default to light mode always, unless explicitly set to dark by user previously
+    const initialIsDark = savedTheme === 'dark';
 
     setIsDark(initialIsDark);
     if (initialIsDark) {

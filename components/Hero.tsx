@@ -42,15 +42,7 @@ const Hero: React.FC = () => {
                     </div>
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-pixel mb-6"
-                >
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-zinc-600 dark:text-zinc-400 uppercase tracking-widest">Available for hire</span>
-                </motion.div>
+
 
                 <motion.h1
                     initial={{ opacity: 0, y: 10 }}

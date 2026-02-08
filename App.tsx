@@ -53,19 +53,59 @@ const AnimatedRoutes: React.FC = () => {
   );
 };
 
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error: Error | null }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error("Uncaught error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-red-50 text-red-900 p-4">
+          <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-6 border border-red-200">
+            <h1 className="text-xl font-bold mb-2">Something went wrong</h1>
+            <p className="text-sm font-mono bg-red-100 p-2 rounded overflow-auto mb-4">
+              {this.state.error?.message}
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
+            >
+              Reload Page
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 const App: React.FC = () => {
   return (
-    <HashRouter>
-      <SmoothScroll>
-        <div className="min-h-screen flex flex-col font-sans selection:bg-zinc-900/10 dark:selection:bg-zinc-100/10 bg-white dark:bg-[#050505] text-zinc-900 dark:text-zinc-100">
-          <Navbar />
-          <main className="flex-grow pt-20 pb-12 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full overflow-x-hidden">
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-        </div>
-      </SmoothScroll>
-    </HashRouter>
+    <ErrorBoundary>
+      <HashRouter>
+        <SmoothScroll>
+          <div className="min-h-screen flex flex-col font-sans selection:bg-zinc-900/10 dark:selection:bg-zinc-100/10 bg-white dark:bg-[#050505] text-zinc-900 dark:text-zinc-100">
+            <Navbar />
+            <main className="flex-grow pt-20 pb-12 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full overflow-x-hidden">
+              <AnimatedRoutes />
+            </main>
+            <Footer />
+          </div>
+        </SmoothScroll>
+      </HashRouter>
+    </ErrorBoundary>
   );
 };
 

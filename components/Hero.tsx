@@ -35,14 +35,17 @@ const Hero: React.FC = () => {
                 >
                     <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl border-4 border-zinc-100 dark:border-zinc-900 bg-[#FFD700] overflow-hidden shadow-2xl relative">
                         <img
-                            src={isDark ? AVATAR_URL_DARK : AVATAR_URL_LIGHT}
+                            src={AVATAR_URL_LIGHT}
                             alt="Zxhan"
-                            className="w-full h-full object-cover pixelated scale-125"
+                            className="w-full h-full object-cover pixelated scale-125 dark:hidden block"
+                        />
+                        <img
+                            src={AVATAR_URL_DARK}
+                            alt="Zxhan"
+                            className="w-full h-full object-cover pixelated scale-125 hidden dark:block"
                         />
                     </div>
                 </motion.div>
-
-
 
                 <motion.h1
                     initial={{ opacity: 0, y: 10 }}
@@ -68,7 +71,6 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.5 }}
                     className="flex flex-col sm:flex-row items-center gap-4 mb-16"
                 >
-                    {/* Native Mailto Link styled as Primary Button */}
                     <motion.a
                         href={mailtoLink}
                         whileHover={{ y: -1 }}
@@ -85,7 +87,6 @@ const Hero: React.FC = () => {
                     </Button>
                 </motion.div>
 
-                {/* Social Link Row */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -104,7 +105,7 @@ const Hero: React.FC = () => {
                             >
                                 <link.icon size={22} strokeWidth={1.5} />
                                 {isEmail && (
-                                    <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-sm font-medium text-zinc-900 dark:text-white">
+                                    <span className="email-span text-sm font-medium text-zinc-900 dark:text-white">
                                         zeeshan89819@gmail.com
                                     </span>
                                 )}

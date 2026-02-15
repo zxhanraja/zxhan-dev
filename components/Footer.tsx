@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 >
                   <link.icon size={22} strokeWidth={1.5} />
                   {isEmail && (
-                    <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-sm font-medium text-zinc-900 dark:text-white">
+                    <span className="email-span text-sm font-medium text-zinc-900 dark:text-white">
                       zeeshan89819@gmail.com
                     </span>
                   )}

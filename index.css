@@ -52,6 +52,19 @@ body {
   z-index: 2147483646;
 }
 
+.email-span {
+  max-width: 0;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .group:hover .email-span {
+    max-width: 15rem;
+  }
+}
+
 .dark::view-transition-new(root) {
   z-index: 1;
 }

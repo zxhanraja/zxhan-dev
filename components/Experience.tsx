@@ -23,7 +23,7 @@ const Experience: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="relative pl-0 md:pl-12 group"
+            className="relative pl-0 md:pl-12 group will-change-[opacity]"
           >
             {/* Timeline Dot */}
             <div className="absolute left-0 top-1.5 w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 items-center justify-center hidden md:flex z-10 group-hover:border-primary transition-colors">

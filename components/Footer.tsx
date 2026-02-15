@@ -53,12 +53,12 @@ const Footer: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all duration-300 group ${isEmail ? 'hover:bg-zinc-100 dark:hover:bg-zinc-800 active:bg-zinc-100 dark:active:bg-zinc-800 focus:bg-zinc-100 dark:focus:bg-zinc-800 px-3 py-2 rounded-full -ml-3' : ''}`}
+                  className={`flex items-center gap-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all duration-300 group ${isEmail ? 'hover:bg-zinc-100 dark:hover:bg-zinc-800 px-3 py-2 rounded-full -ml-3' : ''}`}
                   title={link.label}
                 >
                   <link.icon size={22} strokeWidth={1.5} />
                   {isEmail && (
-                    <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-active:max-w-xs group-focus:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-sm font-medium text-zinc-900 dark:text-white">
+                    <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-sm font-medium text-zinc-900 dark:text-white">
                       zeeshan89819@gmail.com
                     </span>
                   )}

@@ -15,8 +15,8 @@ interface ResourceItemProps {
 const ResourceItem: React.FC<ResourceItemProps> = ({ icon: Icon, title, description, delay, path }) => (
   <Link to={path} className="block w-full">
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
       whileHover={{ scale: 1.02 }}
@@ -44,8 +44,8 @@ const Resources: React.FC = () => {
         {/* Development Setup */}
         <div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="flex flex-col gap-2 mb-8"
           >
@@ -74,8 +74,8 @@ const Resources: React.FC = () => {
         {/* Personal Life */}
         <div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-2 mb-8"

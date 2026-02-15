@@ -19,8 +19,8 @@ const Experience: React.FC = () => {
         {EXPERIENCE_DATA.map((item, index) => (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className="relative pl-0 md:pl-12 group"
